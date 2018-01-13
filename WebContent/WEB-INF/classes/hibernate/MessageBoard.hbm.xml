@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+          "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="booking.bean.MessageBoard" table="MessageBoard">
+	    <id name="id" type="java.lang.Long">
+	        <column name="id" />
+			<generator class="native" />
+	    </id>
+	    <property generated="never" name="buildDate" lazy="false" type="java.util.Date">
+	        <column name="buildDate"/>
+	    </property>
+	    <many-to-one class="booking.bean.User" name="sender" fetch="select" lazy="false">
+	        <column name="sender"></column>
+	    </many-to-one>
+	    <many-to-one class="booking.bean.User" name="accepter" fetch="select" lazy="false">
+	        <column name="accepter"></column>
+	    </many-to-one>
+	    <many-to-one class="booking.bean.MessageBoard" name="parent" fetch="select" lazy="false">
+	        <column name="parent"></column>
+	    </many-to-one>
+	    <property generated="never" name="context" lazy="false" type="java.lang.String" length="1000">
+	        <column name="context"></column>
+	    </property>
+	    <property generated="never" name="title" lazy="false" type="java.lang.String" length="50">
+	        <column name="title"></column>
+	    </property>
+	    <property generated="never" name="status" lazy="false" type="java.lang.Integer" length="5">
+	        <column name="status"></column>
+	    </property>
+	</class>
+</hibernate-mapping>
