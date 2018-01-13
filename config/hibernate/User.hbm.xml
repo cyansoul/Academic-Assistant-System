@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+          "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="booking.bean.User" table="User">
+	    <id name="id" type="java.lang.Long">
+	        <column name="id" />
+			<generator class="native" />
+	    </id>
+	    <property generated="never" name="username" lazy="false" type="java.lang.String" length="50">
+	        <column name="username"/>
+	    </property>
+	    <property generated="never" name="password" lazy="false" type="java.lang.String" length="255">
+	        <column name="password"/>
+	    </property>
+	    <property generated="never" name="birthday" lazy="false" type="java.util.Date">
+	        <column name="birthday"/>
+	    </property>
+	    <property generated="never" name="sex" lazy="false" type="java.lang.String" length="12">
+	        <column name="sex"/>
+	    </property>
+	    <property generated="never" name="major" lazy="false" type="java.lang.String" length="50">
+	        <column name="major"/>
+	    </property>
+	    <property generated="never" name="photo" lazy="false" type="java.lang.String" length="255">
+	        <column name="photo"/>
+	    </property>
+	    <property generated="never" name="email" lazy="false" type="java.lang.String" length="150">
+	        <column name="email"/>
+	    </property>
+	    <property generated="never" name="role" lazy="false" type="java.lang.Integer" length="1">
+	        <column name="role"/>
+	    </property>
+	</class>
+</hibernate-mapping>
